@@ -15,7 +15,7 @@ RUN pip install celery[redis]=="$CELERY_VERSION"
 ENV CELERY_BROKER_URL amqp://broker
 
 # Specify the backend url. 'backend' will the be the name of our Redis container.
-ENV CELERY_BACKEND_URL redis://backend
+ENV CELERY_RESULT_BACKEND_URL redis://backend
 
 # Set the user.
 USER user
