@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  broker:
+    image: 'rabbitmq'
+    ports:
+      - "5672:5672"
+  backend:
+    image: 'redis'
+    ports:
+      - "6379:6379"
+  celery:
+    build: .
+    image: 'test-celery'
+    volumes:
+      - '.:/home/user'
+    depends_on: 
+      - "broker"
+      - "backend"
