@@ -21,4 +21,5 @@ ENV CELERY_RESULT_BACKEND_URL redis://backend
 USER user
 
 # Specify the command to execute when we run the container.
-CMD ["celery", "worker", "--loglevel=INFO"]
+# -c specifies the number of child processes to start the worker with
+CMD ["celery", "worker", "-c 10", "--loglevel=INFO"]

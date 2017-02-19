@@ -14,5 +14,5 @@ def add(x, y):
     return x + y
 
 @app.task
-def tadd(numbers):
+def tsum(numbers):
     return sum(numbers)
